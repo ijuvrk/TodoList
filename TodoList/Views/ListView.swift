@@ -34,7 +34,7 @@ struct ListView: View {
                 EditButton()
             }
             ToolbarItem(placement: .topBarTrailing) {
-                NavigationLink("Add", destination: AddView())
+                NavigationLink("Add", destination: AddView()) // When we use a NavigationLink inside a view that's already in a NavigationView, the destination view inherits the navigation context (so we it get navigationTitle in the AddView()
             }
         }
     }
