@@ -21,7 +21,22 @@ struct ListView: View {
                 ListRowView(title: item)
             }
         }
+        .listStyle(PlainListStyle())
         .navigationTitle("Todo List 📝")
+//        .navigationBarItems(
+//            leading: EditButton(),
+//            trailing:
+//                NavigationLink("Add", destination: Text("Destination")
+//                              )
+        //        )  // going to be depreciated in future
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                EditButton()
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink("Add", destination: AddView())
+            }
+        }
     }
 }
 
